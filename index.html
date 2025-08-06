@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body class="flex  justify-center items-center p-100 bg-gray-200">
+ <form class="  w-[400px] h-[250px]  flex flex-col gap-[25px] justify-center items-center bg-white rounded-xl ">
+      <h1  class="font-bold text-3xl text-blue-700">   الة حاسبة البسيطة</h1>
+       <div action="" class="flex justify-center gap-[10px] p-[10px]">
+           <input id="num1"  type="number" class=" h-[50px] w-[150px] px-[10px] text-center border-[2px] border-gray-200 rounded-xl" 
+           placeholder="الرقم الاول" 
+           required >
+            <select id="operation" class="h-[50px] w-[60px] bg-white transition-all font-bold cursor-pointer border-[2px] border-gray-200 rounded-xl px-[10px]">
+              <option value="add">+</option>
+              <option value="sub">-</option>
+              <option value="mult"> *</option>
+              <option value="div">/</option>
+            </select>
+            <input type="number" id="num2"
+            placeholder="الرقم الثاني"class="  h-[50px] w-[150px] px-[10px] text-center border-[2px] border-gray-200 rounded-xl"
+            required>
+        </div>
+        <button type="submit"  class=" bg-blue-700 w-[350px] h-[50px] text-center p-[10px] rounded-2xl text-gray-200 font-bold">احسب  </button>
+        </form>
+        <script>
+        addEventListener("submit",()=>{
+        let num1= Number(document.getElementById("num1").value);
+        let num2= Number(document.getElementById("num2").value);
+        const x= document.getElementById("operation").value;
+          let result;
+        switch(x)
+        {
+          case "add" :
+            result=num1+num2;
+          break;
+          case "sub" :
+            result=num1-num2;
+          break;
+          case "mult" :
+            result=num1*num2;
+          break;
+          case "div" :
+            if(num2!=0)
+            result=num1/num2;
+          else{ result="القسمة غير ممكنة"}
+          break;
+        
+        }
+         alert("النتيجة" +result);
+      })
+        
+        
+        
+
+        </script>
+    
+</body>
+</html>
